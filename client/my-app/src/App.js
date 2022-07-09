@@ -30,16 +30,13 @@ function App() {
     event.preventDefault();
 
     var { uname, pass } = document.forms[0];
-
-    // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
-
-    fetch('/login', {
+    
+    const data = {
       method: 'POST',
-      header: {
-        'Accept': 'application/json'
-      }
-    });
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user: uname.value, passwd: pass.value })
+    };
+    fetch('/login', data);
     // Compare user info
     /*
     if (userData) {
