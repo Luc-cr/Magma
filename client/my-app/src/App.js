@@ -34,9 +34,9 @@ function App() {
     const data = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ user: uname.value, passwd: pass.value })
+      body: JSON.stringify({email:"LucasCrespo@gmail.com", user: uname.value, passwd: pass.value })
     };
-    fetch('/login', data);
+    fetch('/api/login', data);
     // Compare user info
     /*
     if (userData) {
